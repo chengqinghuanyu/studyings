@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>任意多行垂直居中</title>
+  <link rel="stylesheet" href="">
+  <style type="text/css">
+  .container{
+    height: 14rem;
+    background: red;
+  }
+  .vcenter {
+    position: relative;
+    height: 100%;
+  }
+  .vcenter-child{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 2rem;
+    display: table;
+    text-align: center;
+    box-sizing: border-box;
+    text-align: left;
+    color: #fff;
+}
+
+/*方法二*/
+.vertical{
+  color: #aedaed;
+  text-align: center;
+}
+.search_box{
+  width:100%;
+  display:table;
+  height: 200px;
+}
+.search_box>a{
+  display:table-cell;
+  background: #dedede;
+  height:0;
+  text-align:center;
+  font-size:1.5rem;
+  text-decoration: none;
+  vertical-align: middle;
+}
+.pp {
+  vertical-align: middle;
+  padding: 0;
+  margin: 0 auto;
+  background: #aaa;
+  width: 25%;
+  color: #fff;
+  text-align: left;
+}
+  </style>
+</head>
+<body>
+  <H1 class="vertical">垂直居中的css样式</H1>
+  <h2>方法一</h2>
+<div class="container">
+  <div class="vcenter">
+    <div class="vcenter-child">---我要垂直居中entering--我要垂直居中entering我要垂直居中entering---我要垂直居中entering---我要垂直居中entering--我要垂直居中entering</div>
+  </div>
+</div>
+
+  <h2>方法二</h2>
+<div class="search_box">
+        <a href="" title="搜索" class="search_02" >
+          <!-- 搜索<br />问题 -->
+
+           <span class="pp">垂直居中垂直居中垂直居中垂直居中垂直居中垂直居中垂直居中垂直居中垂直居中垂直居中垂直居中</span>
+        </a>
+</div>
+</body>
+</html>

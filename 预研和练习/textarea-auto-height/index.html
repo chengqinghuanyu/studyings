@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta id="eqMobileViewport" name="viewport" content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no" servergenerated="true">
+  <title>文本域自适应高度</title>
+
+  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="https://weui.io/weui.css">
+</head>
+<body>
+<div class="page input js_show" style="margin-bottom: 20px;">
+
+    <div class="page__bd">
+        <div class="weui-cells__title" style="text-align: center;color: #000;font-size: 24px;color: #000;font-weight: 400;">长按光标滚动</div>
+        <div class="weui-cells weui-cells_form">
+
+
+        <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">长按光标滚动</label></div>
+                <div class="weui-cell__bd">
+                    <textarea type="text" id="content" class="weui-input" style="position: relative;" placeholder="请输入" maxlength="100">今天是星期三下午两点今天是星期三下午两点</textarea>
+                </div>
+        </div>
+         <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">长按光标滚动</label></div>
+                <div class="weui-cell__bd">
+                    <input type="text" id="txt1"  class="weui-input" value="abcde" onclick="getTxt1CursorPosition()">
+                </div>
+        </div>
+        </div>
+    </div>
+
+
+
+</div>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script type="text/javascript">
+(function($){
+      $.fn.autoTextarea = function(options) {
+        var defaults={
+          maxHeight:null,
+          minHeight:$(this).height()
+        };
+        var opts = $.extend({},defaults,options);
+        return $(this).each(function() {
+          $(this).bind("paste cut keydown keyup focus",function(){
+            var height,style=this.style;
+            this.style.height = opts.minHeight + 'px';
+            if (this.scrollHeight > opts.minHeight) {
+              if (opts.maxHeight && this.scrollHeight > opts.maxHeight) {
+                height = opts.maxHeight;
+                style.overflowY = 'scroll';
+              } else {
+                height = this.scrollHeight;
+                style.overflowY = 'hidden';
+              }
+              style.height = height + 'px';
+            }
+          });
+        });
+      };
+    })(jQuery);
+
+$(function(){
+  　　$("#content").autoTextarea({
+    　　　　maxHeight:500,
+    　　　　minHeight:100//文本框是否自动撑高，默认：null，不自动撑高；如果自动撑高必须输入数值，该值作为文本框自动撑高的最大高度
+  　　});
+  　　$("#content").focus();
+});
+</script>
+</body>
+</html>

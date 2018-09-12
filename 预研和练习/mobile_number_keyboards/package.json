@@ -1,0 +1,31 @@
+{
+  "name": "mobile_number_keyboard",
+  "version": "1.0.0",
+  "description": "HTML Numeric Keyboard For Mobile",
+  "main": "mobile_number_keyboard.js",
+  "directories": {
+    "my-test": "my-test"
+  },
+  "scripts": {
+    "my-test": "open my-test/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/znonzadmin/mobile_number_keyboards.git"
+  },
+  "keywords": [
+    "html",
+    "numeric",
+    "keyboard",
+    "mobile"
+  ],
+  "author": "znonzadmin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/znonzadmin/mobile_number_keyboards/issues"
+  },
+  "homepage": "https://github.com/znonzadmin/mobile_number_keyboards/#readme",
+  "dependencies": {
+    "Zepto": "^1.2.0"
+  }
+}

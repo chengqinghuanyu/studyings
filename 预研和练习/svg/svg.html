@@ -1,0 +1,323 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+        <title>svg进度条   scalable-vector-graphic</title>
+    </head>
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <circle cx="100" cy="50" r="40" stroke="black" strock-width="2" fill="red" style="z-index: 1"></circle>
+            <!--rx,ry产生圆角,半径-->
+            <!--cx,cy产生坐标-->
+            <!--stroke-width:边框-->
+            <!--height;width宽和高-->
+            <!--stroke-opacity:边框透明度-->
+            <!--fill-opacity:填充的透明度-->
+            <!--fill:填充-->
+             <rect x="50" y="20" rx="50" ry="50" width="100" height="100" style="fill:rgb(0,205,255); stroke-width:1 ;:rgb(0,0,0);fill-opacity:0.2;
+  stroke-opacity:0.6;z-index: 0">
+
+
+             </rect>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <ellipse cx="100" cy="80" rx="30" ry="50"  style="fill:yellow;stoke:purple;stroke-width:2;z-index: 3"></ellipse>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <ellipse cx="240" cy="150" rx="220" ry="30" style="fill:#eee"/>
+            <ellipse cx="220" cy="250" rx="190" ry="20" style="fill:#aaa"/>
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <!--直线两个点的坐标-->
+            <line x1="0" y1="0" x2="400" y2="400" style="stroke:rgb(255,255,0);stroke-width:2"/>
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <!--polygon points用于定义每个角的x,y坐标-->
+             <!--nonzero填充规则：非0要判断一个点是否在图形内，从该点作任意方向的一条射线，然后检测射线与图形路径的交点情况。从0开始计数，路径从左向右穿过射线则计数加1，从右向左穿过射线则计数减1。得出计数结果后，如果结果是0，则认为点在图形外部，否则认为在内部-->
+            <polygon points="100,10 40,180 190,60 10,60 160,180" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:nonzero;"/>
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <!--polygon points用于定义每个角的x,y坐标-->
+             <!--evenodd填充规则："奇偶"按该规则，要判断一个点是否在图形内，从该点作任意方向的一条射线，然后检测射线与图形路径的交点的数量。如果结果是奇数则认为点在内部，是偶数则认为点在外部-->
+            <polygon points="100,10 40,180 190,60 10,60 160,180" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;"/>
+        </svg>
+
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <polyline points="20,20 40,25 60,40 80,120 120,140 200,180" style="fill:none;stroke:black;stroke-width:3" />
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <polyline points="0,40 40,40 40,80 80,80 80,120 120,120 120,160" style="fill:white;stroke:red;stroke-width:4" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <!--路径数据
+            M = moveto
+            L = lineto
+            H = horizontal lineto
+            V = vertical lineto
+            C = curveto
+            S = smooth curveto
+            Q = quadratic Bézier curve
+            T = smooth quadratic Bézier curveto
+            A = elliptical Arc
+            Z = closepath
+        测试-->
+            <path d="M150 0 L75 200 L225 200 Z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <path id="lineAB" d="M 100 350 l 150 -300" stroke="red"
+          stroke-width="3" fill="none" />
+          <path id="lineBC" d="M 250 50 l 150 300" stroke="red"
+          stroke-width="3" fill="none" />
+          <path d="M 175 200 l 150 0" stroke="green" stroke-width="3"
+          fill="none" />
+          <path d="M 100 350 q 150 -300 300 0" stroke="blue"
+          stroke-width="5" fill="none" />
+          <!-- Mark relevant points -->
+          <g stroke="black" stroke-width="3" fill="black">
+            <circle id="pointA" cx="100" cy="350" r="3" />
+            <circle id="pointB" cx="250" cy="50" r="3" />
+            <circle id="pointC" cx="400" cy="350" r="3" />
+          </g>
+          <!-- Label the points -->
+          <g font-size="30" font="sans-serif" fill="black" stroke="none"
+          text-anchor="middle">
+            <text x="100" y="350" dx="-30">A</text>
+            <text x="250" y="50" dy="-10">B</text>
+            <text x="400" y="350" dx="30">C</text>
+          </g>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+xmlns:xlink="http://www.w3.org/1999/xlink">
+           <defs>
+            <path id="path1" d="M75,20 a1,1 0 0,0 100,0" />
+          </defs>
+          <text x="10" y="100" style="fill:red;">
+            <textPath xlink:href="#path1">I love SVG I love SVG</textPath>
+          </text>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <a xlink:href="http://www.bongv.com" target="_blank">
+            <text x="0" y="15" fill="black">I love SVG</text>
+          </a>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <g fill="none" stroke="black" stroke-width="0.5">
+            <path stroke-dasharray="5,5" d="M5 20 l215 0" />
+            <path stroke-dasharray="10,10" d="M5 40 l215 0" />
+            <path stroke-dasharray="20,10,5,5,5,10" d="M5 60 l215 0" />
+          </g>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <defs>
+            <filter id="f1" x="0" y="0">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+            </filter>
+          </defs>
+          <rect width="90" height="90" stroke="green" stroke-width="3"
+          fill="yellow" filter="url(#f1)" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+              <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <ellipse cx="200" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+          <text fill="#ffffff" font-size="45" font-family="Verdana" x="150" y="86">
+          SVG</text>
+        </svg>
+
+       <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <radialGradient id="grad14" cx="20%" cy="30%" r="30%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:rgb(255,255,255);
+      stop-opacity:0" />
+      <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  <ellipse cx="200" cy="70" rx="85" ry="55" fill="url(#grad14)" />
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="MyFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="200" height="120">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur" />
+      <feOffset in="blur" dx="4" dy="4" result="offsetBlur" />
+      <feSpecularLighting in="blur" surfaceScale="5" specularConstant=".75" specularExponent="20" lighting-color="#bbbbbb" result="specOut">
+        <fePointLight x="-5000" y="-10000" z="20000" />
+      </feSpecularLighting>
+      <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut" />
+      <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint" />
+      <feMerge>
+        <feMergeNode in="offsetBlur" />
+        <feMergeNode in="litPaint" />
+      </feMerge>
+    </filter>
+  </defs>
+  <rect x="1" y="1" width="198" height="118" fill="#cccccc" />
+  <g filter="url(#MyFilter)">
+    <path fill="none" stroke="#D90000" stroke-width="10" d="M50,90 C0,90 0,30 50,30 L150,30 C200,30 200,90 150,90 z" />
+    <text fill="#FFFFFF" stroke="black" font-size="45" font-family="宋体" x="52" y="76">尹鹏孝</text>
+  </g>
+</svg>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <linearGradient id="MyGradient" gradientUnits="userSpaceOnUse" x1="100" y1="0" x2="300" y2="0">
+      <stop offset="0" style="stop-color:#000000" />
+      <stop offset=".33" style="stop-color:#ffffff" />
+      <stop offset=".67" style="stop-color:#ffff00" />
+      <stop offset="1" style="stop-color:#808080" />
+    </linearGradient>
+    <filter id="normal">
+      <feBlend mode="normal" in2="BackgroundImage" in="SourceGraphic" />
+    </filter>
+    <filter id="multiply">
+      <feBlend mode="multiply" in2="BackgroundImage" in="SourceGraphic" />
+    </filter>
+    <filter id="screen">
+      <feBlend mode="screen" in2="BackgroundImage" in="SourceGraphic" />
+    </filter>
+    <filter id="darken">
+      <feBlend mode="darken" in2="BackgroundImage" in="SourceGraphic" />
+    </filter>
+    <filter id="lighten">
+      <feBlend mode="lighten" in2="BackgroundImage" in="SourceGraphic" />
+    </filter>
+  </defs>
+  <g style="enable-background:new">
+    <rect x="40" y="20" width="300" height="450" style="fill:url(#MyGradient)" />
+    <g style="font-size:75;fill:#888888;fill-opacity:.6">
+      <text x="50" y="90" filter="url(#normal)">Normal</text>
+      <text x="50" y="180" filter="url(#multiply)">Multiply</text>
+      <text x="50" y="270" filter="url(#screen)">Screen</text>
+      <text x="50" y="360" filter="url(#darken)">Darken</text>
+      <text x="50" y="450" filter="url(#lighten)">Lighten</text>
+    </g>
+  </g>
+</svg>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <rect id="rec" x="300" y="100" width="300" height="100" style="fill:lime">
+    <animate attributeName="x" attributeType="XML" begin="0s" dur="6s" fill="freeze" from="300" to="0" />
+    <animate attributeName="y" attributeType="XML" begin="0s" dur="6s" fill="freeze" from="100" to="0" />
+    <animate attributeName="width" attributeType="XML" begin="0s" dur="6s" fill="freeze" from="300" to="800" />
+    <animate attributeName="height" attributeType="XML" begin="0s" dur="6s" fill="freeze" from="100" to="300" />
+    <animateColor attributeName="fill" attributeType="CSS" from="lime" to="red" begin="2s" dur="4s" fill="freeze" />
+  </rect>
+  <g transform="translate(100,100)">
+    <text id="TextElement" x="0" y="0" style="font-family:Verdana;font-size:24; visibility:hidden"> It's SVG!
+      <set attributeName="visibility" attributeType="CSS" to="visible" begin="1s" dur="5s" fill="freeze" />
+      <animateMotion path="M 0 0 L 100 100" begin="1s" dur="5s" fill="freeze" />
+      <animateColor attributeName="fill" attributeType="CSS" from="red" to="blue" begin="1s" dur="5s" fill="freeze" />
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="-30" to="0" begin="1s" dur="5s" fill="freeze" />
+      <animateTransform attributeName="transform" attributeType="XML" type="scale" from="1" to="3" additive="sum" begin="1s" dur="5s" fill="freeze" />
+    </text>
+  </g>
+</svg>
+
+<script type="text/javascript">
+
+class Human{
+    constructor(){
+
+    }
+    listToppings(){
+
+    }
+}
+var items = [1,2,3,4,5,6,7];
+var incrementedItems=[];
+items.forEach((x) => {
+    console.log(x);
+    incrementedItems.push(x+1);
+  });
+console.log(incrementedItems);
+var nea=[];
+ nea=items.map((x)=> x+1);
+ console.log(nea);
+
+ class Bird{
+    constructor(weight,height){
+        this.weight = weight;
+        this.heigt = height;
+    }
+    walk(){
+        console.log('walk');
+    }
+ }
+ class Penguin extends Bird{
+    constructor(weight,height){
+        super(weight,height);
+    }
+    swim(){
+        console.log('swim');
+    }
+ }
+ let penguin = new Penguin(100,200);
+ penguin.walk();
+ penguin.swim();
+
+ /*常量和作用域块*/
+ var i;
+ for(i=0;i<10;i++){
+    var j=i;
+    let k=i;
+ }
+ console.log(i);
+ //console.log(k);
+
+ for(var x=0;x<5;x++){
+    setTimeout(()=>console.log(x),0);
+ }
+
+ for(let x=0;x<5;x++){
+    setTimeout(()=>console.log(x),0);
+ }
+
+ const B={
+    name :"Link"
+ };
+ B.name="1000";
+ console.log(B);
+ B.name=null;
+ console.log(B)
+
+
+ const add = (a,b)=>a+b;
+ let arg = [3,5];
+ add(arg);
+ let cde = ["c","d","e"];
+ let scdle = ["a","b",cde,"M"];
+ console.log(scdle);
+ console.log(scdle.length);
+
+//解构模式
+let jane = { firstName: 'Jane', lastName: 'Doe'};
+let john = { firstName: 'John', lastName: 'Doe', middleName: 'Smith' }
+function sayName({firstName, lastName, middleName = '尹鹏孝'}) {
+  console.log(`Hello ${firstName}-${middleName}-${firstName}`)
+}
+
+sayName(jane) // -> Hello Jane N/A Doe
+sayName(john) // -> Helo John Smith Doe
+
+
+
+interface action{
+    name:tring
+}
+let a:action = {
+    type:"aaa"
+}
+</script>
+</body>
+</html>

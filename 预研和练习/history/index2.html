@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>页面3</title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <div>我是页面3</div>
+  <a href="http://www.baidu.com">百度</a>
+  <script type="text/javascript">
+        window.onload = function(){
+            pushHistory();
+            var bool=false;
+            setTimeout(function(){
+                bool=true;
+            },1500);
+            window.addEventListener("popstate", function(e) {
+              if(bool){
+                    //alert("我监听到了浏览器的返回按钮事件啦");//根据自己的需求实现自己的功能
+                    //window.history.go(-1);
+                    //window.history.back();
+                    //console.log(222);
+                }
+                pushHistory();
+
+        }, false);
+
+        function pushHistory() {
+               var state = {
+                   title: "title",
+                   url: "#"
+               };
+           window.history.pushState(state, "title", "#");
+       }
+    }
+  </script>
+</body>
+</html>

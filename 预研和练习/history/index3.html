@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>history.go(-1)</title>
+  <link rel="stylesheet" href="">
+  <!-- <script src="https://unpkg.com/lodash@4.16.6"></script> -->
+</head>
+<body>
+  <script type="text/javascript">
+      //返回
+    pushHistory();
+    var bool=false;
+    setTimeout(function(){
+        bool=true;
+    },1500)
+
+    window.addEventListener("popstate", function(e){
+        if(bool){
+            //此处判断如果是服务帖进入的支付页面，返回跳转到服务帖页面，如果不是就按原有的跳转
+            var is_SCAVENGING_SERVEICE_POST = window.localStorage.getItem("is_SCAVENGING_SERVEICE_POST");
+
+            if(is_SCAVENGING_SERVEICE_POST){
+                window.localStorage.setItem("is_SCAVENGING_SERVEICE_POST",null);
+                window.localStorage.removeItem("is_SCAVENGING_SERVEICE_POST");
+                window.location.href = is_SCAVENGING_SERVEICE_POST;
+                return false;
+            }
+            window.history.back(-1);
+            return false;
+            //window.location.reload();
+
+
+        }
+        pushHistory();
+    }, false);
+
+    function pushHistory(){
+        var state = {
+            title:"",
+            url: "#"
+        };
+        window.history.pushState(state, "", "#");
+    };
+  </script>
+
+
+</body>
+</html>
